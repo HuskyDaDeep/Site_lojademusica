@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="src/output.css" rel="stylesheet">
+  <title>Harmonic Place</title>
+</head>
+<body class="bg-sky-50">
+    
+    <header class="flex justify-between w-full h-full bg-gray-100">
+
+        <nav class="flex justify-between mx-5">
+            <div class="font-medium justify-between flex gap-12 md:gap-100 md:flex">
+                <select name="Guitarra" id="choice">
+                    <option value="geral">Geral</option>
+                   <option value="guitarra">Guitarra</option>
+                   <option value="bateria">Bateria</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <h2 class="text-xl font-medium mt-3 flex justify-center items-center md:mt-6">
+        Instrumentos
+    </h2>
+
+    <div class="mt-4 p-1 grid grid-cols-1 md:grid-cols-3 px-6 mb-16">
+
+        <div  id="guitarra">
+            <div    data-name="Guitarra ESP Explorer"
+            data-price="5.600"
+            class="flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md">
+                <img src="assets/Esp.webp" alt="Esp" class="w-55 h-full rounded-md md:w-85 md:h-full">
+                <div class="w-full h-30%">
+                    <p class="font-bold">Guitarra LTD Explorer</p>
+                    <p class="text-sn">Modelo EX-50 – LEX50, corpo em Basswood, 22 trastes, captação ESP LH-150, tarraxas LTD.</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 5.600</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        
+                        </button>
+                    </div>
+                
+
+                </div>
+            </div>
+
+            <div data-name="Guitarra Telecaster Fender"
+            data-price="10.071"
+            class="flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md">
+                <img src="assets/343981-1.webp" alt="Telecaster" class="w-55 h-full rounded-md md:w-85 md:h-full">
+                <div class="w-full h-30%">
+                    <p class="font-bold">Guitarra Telecaster Fender</p>
+                    <p class="text-sn">O braço foi projetado para tocabilidade rápida e suave, com perfil “C” Moderno e acabamento acetinado, além de uma escala de rosewood com raio de 9.5”, bordas arredondadas e 22 trastes medium jumbo. Corpo em mahogany chambered com acabamentos clássicos da Fender.</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 10.071</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        
+                        </button>
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>
+
+
+       <div id="bateria">
+            <div data-name="Bateria D One Rocket"
+            data-price="5.600"
+             class="flex justify-center items-center flex-col gap-2 hover:scale-105 duration-200 hover:shadow-xl hover:bg-gray-100 rounded-md">
+                <img src="assets/bateria.webp" alt="Bateria D One Rocket" class=" w-55 h-full rounded-md md:w-85 md:h-full ">
+                <div class="w-full h-30">
+                    <p class="font-bold">Bateria D One Rocket</p>
+                    <p class="text-sn">
+                        Modelo: Rocket
+                        Código: DR22
+                        Acabamento: Revestida
+                        Cor: Orange Satin Sparkle (OSS)
+                        Madeira: 100% Poplar
+                        .</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 5.600</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                            
+                        </button>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
