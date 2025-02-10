@@ -4,102 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
   <title>Harmonic Place</title>
 </head>
-<body class="bg-sky-50">
+<body class="bg-gray-500">
     
-    <header class="flex justify-between w-full h-full bg-gray-100">
-
-        <nav class="flex justify-between mx-5">
-            <div class="font-medium justify-between flex gap-12 md:gap-100 md:flex">
-                <select name="Guitarra" id="choice">
-                    <option value="geral">Geral</option>
-                   <option value="guitarra">Guitarra</option>
-                   <option value="bateria">Bateria</option>
-                </select>
-            </div>
+    <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Harmonic Place</h1>
+        <nav class="hidden md:flex">
+            <button onclick="filterInstruments('guitarra')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Guitarras</button>
+            <button onclick="filterInstruments('bateria')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Baterias</button>
+            <button onclick="filterInstruments('piano')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Piano</button>
+            <button onclick="filterInstruments('all')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Todos</button>
         </nav>
     </header>
-
-    <h2 class="text-xl font-medium mt-3 flex justify-center items-center md:mt-6">
-        Instrumentos
-    </h2>
-
-    <div class="mt-4 p-1 grid grid-cols-1 md:grid-cols-3 px-6 mb-16">
-
-        
-            <div data-name="Guitarra ESP Explorer"
-            data-price="5.600"
-            class="flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md">
-                <img src="assets/Esp.webp" alt="Esp" class="w-55 h-full rounded-md md:w-85 md:h-full">
-                <div class="w-full h-30%">
-                    <p class="font-bold">Guitarra LTD Explorer</p>
-                    <p class="text-sn">O braço foi projetado para tocabilidade rápida e suave, com perfil “C” Moderno e acabamento acetinado, além de uma escala de rosewood com raio de 9.5”, bordas arredondadas e 22 trastes medium jumbo. Corpo em mahogany chambered com acabamentos clássicos da Fender.</p>
-
-                    <div class="flex items-center gap-2 justify-between mt-2">
-                        <p class="font-bold text-lg">R$ 5.600</p>
-                    </div>
-                
-
-                </div>
-            </div>
-        
-        
-            <div data-name="Guitarra Telecaster Fender"
-            data-price="10.071"
-            class="flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md">
-                <img src="assets/343981-1.webp" alt="Telecaster" class="w-55 h-full rounded-md md:w-85 md:h-full">
-                <div class="w-full h-30%">
-                    <p class="font-bold">Guitarra Telecaster Fender</p>
-                    <p class="text-sn">O braço foi projetado para tocabilidade rápida e suave, com perfil “C” Moderno e acabamento acetinado, além de uma escala de rosewood com raio de 9.5”, bordas arredondadas e 22 trastes medium jumbo. Corpo em mahogany chambered com acabamentos clássicos da Fender.</p>
-
-                    <div class="flex items-center gap-2 justify-between mt-2">
-                        <p class="font-bold text-lg">R$ 10.071</p>
-                        <button 
-                            class="bg-gray-900 px-5 rounded add-to-cart-btn">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        
-                        </button>
-                    </div>
-                
-
-                </div>
-            </div>
-        
-
-
-       
-            <div data-name="Bateria D One Rocket"
-            data-price="5.600"
-             class="flex justify-center items-center flex-col gap-2 hover:scale-105 duration-200 hover:shadow-xl hover:bg-gray-100 rounded-md">
-                <img src="assets/batera.webp" alt="Bateria D One Rocket" class="w-55 h-full rounded-md md:w-85
-                md:h-full ">
-                <div class="w-full h-30%">
-                    <p class="font-bold">Bateria D One Rocket</p>
-                    <p class="text-sn">
-                        O braço foi projetado para tocabilidade rápida e suave, com perfil “C” Moderno e acabamento acetinado, além de uma escala de rosewood com raio de 9.5”, bordas arredondadas e 22 trastes medium jumbo. Corpo em mahogany chambered com acabamentos clássicos da Fender.
-                        .</p>
-
-                    <div class="flex items-center gap-2 justify-between mt-2">
-                        <p class="font-bold text-lg">R$ 5.600</p>
-                        <button 
-                            class="bg-gray-900 px-5 rounded add-to-cart-btn">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                            
-                        </button>
-                    </div>
-                    
-
-                </div>
-
-            </div>
-        
-    </div>
-
     
+    <h1 class="text-2xl font-medium mt-3 text-center md:mt-6">
+        Instrumentos
+    </h1>
 
+    <div id="instrument-list" class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4">
+        
+        <div class="instrument guitarra flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/Esp.webp" alt="Guitarra LTD Explorer" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Guitarra LTD Explorer</p>
+                <p class="text-sm text-gray-700">Uma guitarra poderosa para rock e metal.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 5.600</p>
+                </div>
+            </div>
+        </div>
+        
+        <div
+            class="instrument guitarra flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/343981-1.webp" alt="Guitarra Telecaster Fender" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Guitarra Telecaster Fender</p>
+                <p class="text-sm text-gray-700">Um clássico atemporal com timbre limpo e brilhante.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 10.071</p>
+                </div>
+            </div>
+        </div>
+        
+        <div
+            class="instrument piano flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/piano_roland_digital_fp_30x_preto_com_pedal_sustain_e_fonte_361_2_08289ec4ac2d609e3561fb5a98e34b35.webp" alt="Guitarra Telecaster Fender" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Piano Roland Digital</p>
+                <p class="text-sm text-gray-700">O piano oferece um som super-realista e personalizável através do Piano Designer.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 4.769,10</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="instrument bateria flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/bateria_eletronica_roland_vad103_v_drums_acoustic_design_12085_2_64cf712e64b19f70af55d1532561a3f2_20210901145351.webp" alt="Guitarra Telecaster Fender" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Bateria Eletrônica Roland VAD103</p>
+                <p class="text-sm text-gray-700">O piano oferece um som super-realista e personalizável através do Piano Designer.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 19.176,80</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="instrument guitarra flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/guitarra_tagima_rock_in_rio_guitar_ii_strat_3s_escala_escura_candy_aplle_red_17145_1_2e79d5a77a1116221d3f3868606da877.webp" alt="Guitarra Telecaster Fender" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Guitarra Rock in Rio Tagima</p>
+                <p class="text-sm text-gray-700">O piano oferece um som super-realista e personalizável através do Piano Designer.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 1.099,72</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="instrument guitarra flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/guitarra_ibanez_6_cordas_grx70qa_tks_transparent_black_sunburst_17514_1_a398e9f80d94ff4cc67cd83f6950aa73.webp" alt="Guitarra Telecaster Fender" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Guitarra Ibanez GRX70QA</p>
+                <p class="text-sm text-gray-700">O piano oferece um som super-realista e personalizável através do Piano Designer.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 2.195,10</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="instrument bateria flex justify-center items-center flex-col gap-2 hover:scale-105 duration-300 hover:shadow-xl hover:bg-gray-100 rounded-md p-4">
+            <img src="assets/bateria_acustica_michael_trinity_dmt320_kit_completo_c_banco_13989_2_00a2dbcbcf7183591ed36ec9be76a432.webp" alt="Bateria D One Rocket" class="w-56 md:w-80 rounded-md">
+            <div class="w-full">
+                <p class="font-bold">Bateria Acústica Michael Trinity Dmt320</p>
+                <p class="text-sm text-gray-700"> é a escolha ideal para quem procura um kit versátil, compacto e com ótima sonoridade.</p>
+                <div class="flex items-center justify-between mt-2">
+                    <p class="font-bold text-lg">R$  3.482,10</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
-
-
 </body>
 </html>
