@@ -19,13 +19,20 @@
     <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
         <h1 class="text-xl font-bold">Harmonic Place</h1>
         <nav class="hidden md:flex">
-            <button onclick="filterInstruments('guitarra')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Guitarras</button>
-            <button onclick="filterInstruments('bateria')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Baterias</button>
-            <button onclick="filterInstruments('piano')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Piano</button>
-            <button onclick="filterInstruments('all')" class="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600">Todos</button>
+            <button class=" text- hover:bg-gray-700" onclick="toggleMenu()">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
         </nav>
+       
     </header>
-    
+
+    <div id="mobile-menu" class="hidden bg-gray-800 text-white flex flex-col p-4">
+        <button onclick="filterInstruments('guitarra')" class="py-2 hover:bg-gray-700">Guitarras</button>
+        <button onclick="filterInstruments('bateria')" class="py-2 hover:bg-gray-700">Baterias</button>
+        <button onclick="filterInstruments('piano')" class="py-2 hover:bg-gray-700">Piano</button>
+        <button onclick="filterInstruments('all')" class="py-2 hover:bg-gray-700">Todos</button>
+    </div>
+        
     <h1 class="text-2xl font-medium mt-3 text-center md:mt-6">
         Instrumentos
     </h1>

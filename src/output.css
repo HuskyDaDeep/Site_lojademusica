@@ -799,6 +799,11 @@
       display: flex;
     }
   }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
   .md\:h-full {
     @media (width >= 48rem) {
       height: 100%;

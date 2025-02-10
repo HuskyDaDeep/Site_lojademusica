@@ -8,3 +8,5 @@ function filterInstruments(type) {
         }
     });
 }
+function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');}
